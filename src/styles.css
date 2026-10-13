@@ -1,0 +1,5 @@
+.hn-grid .k-grid-header th .k-checkbox,
+.hn-grid th input[type='checkbox'] {
+    visibility: hidden;
+    pointer-events: none;
+}
