@@ -13,7 +13,7 @@ import { FilterContext, NumberFilterCell, TextFilterCell, TypeFilterCell } from 
 import { SelectedRow } from './SelectedRow';
 import { PostRow } from './PostRow';
 
-const PAGE_SIZE = 20;
+const PAGE_SIZE = 10;
 const FILTER_DEBOUNCE_MS = 400;
 type DetailExpand = GridDetailExpandChangeEvent['detailExpand'];
 type Selection = GridSelectionChangeEvent['select'];
@@ -150,7 +150,7 @@ export function App(): ReactElement {
       {error ? <p role="alert">{error}</p> : null}
 
       <FilterContext.Provider value={filterContext}>
-        <div style={{ position: 'relative', marginTop: 12 }}>
+        <div className="hn-box" style={{ position: 'relative', marginTop: 12 }}>
           <Grid
             className="hn-grid"
             data={posts}
@@ -160,9 +160,8 @@ export function App(): ReactElement {
             skip={request.skip}
             take={PAGE_SIZE}
             total={total}
-            pageable={{ buttonCount: 10, info: true, previousNext: true }}
+            pageable={{ buttonCount: 10, info: false, previousNext: true }}
             onPageChange={handlePageChange}
-            // detail={PostDetail}
             rows={{ data: PostRow }}
             detailExpand={detailExpand}
             onDetailExpandChange={handleDetailExpandChange}

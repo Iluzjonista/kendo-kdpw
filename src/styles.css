@@ -1,7 +1,89 @@
+:root {
+    --kendo-color-primary: #3a3f45;
+    --kendo-color-primary-hover: #23272b;
+    --kendo-color-primary-active: #23272b;
+    --kendo-color-primary-emphasis: #e9ebee;
+    --kendo-color-primary-subtle: #f1f2f4;
+    --kendo-color-primary-subtle-hover: #e9ebee;
+    --kendo-color-primary-subtle-active: #dfe2e5;
+}
+
+body {
+    margin: 0;
+    padding: 24px;
+    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+    font-size: 13px;
+    color: #222;
+    background: #fff;
+}
+
+.hn-box {
+    position: relative;
+    margin-top: 12px;
+    border: 1px solid #e3e6ec;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    background: #fff;
+}
+
+.hn-box .hn-grid.k-grid {
+    border: 0;
+    border-radius: 0;
+    font-family: inherit;
+    font-size: 13px;
+}
+
+.hn-grid th,
+.hn-grid td,
+.hn-grid .k-table-th,
+.hn-grid .k-table-td {
+    border-left-width: 0;
+    border-right-width: 0;
+    border-inline-width: 0;
+    border-inline-start: 0;
+    border-inline-end: 0;
+}
+
+.hn-grid .k-grid-header,
+.hn-grid .k-grid-header th,
+.hn-grid .k-table-thead .k-table-th {
+    background: #fff;
+    font-weight: 700;
+    color: #222;
+}
+
+.hn-grid .k-grid-header thead>tr:not(.k-filter-row)>th,
+.hn-grid .k-table-thead tr:not(.k-filter-row)>.k-table-th {
+    border-bottom: 3px solid #a7c600;
+    padding-block: 12px;
+}
+
 .hn-grid .k-grid-header th .k-checkbox,
-.hn-grid th input[type='checkbox'] {
+.hn-grid th input[type='checkbox'],
+.hn-grid .k-table-thead .k-checkbox {
     visibility: hidden;
     pointer-events: none;
+}
+
+.hn-grid .k-filter-row,
+.hn-grid .k-filter-row th,
+.hn-grid .k-filter-row td,
+.hn-grid .k-filter-row>.k-table-td {
+    background: #f5f5f5;
+    border-bottom: 1px solid #e3e6ec;
+}
+
+.hn-grid .k-filter-row .k-input,
+.hn-grid .k-filter-row .k-picker,
+.hn-grid .k-filter-row .k-input-inner {
+    background: #fff;
+}
+
+.hn-grid .k-table-tbody td,
+.hn-grid .k-table-tbody>tr>.k-table-td {
+    padding-block: 10px;
+    border-bottom: 1px solid #eceef1;
 }
 
 .hn-grid .k-table-tbody tr.row--positive:not(.row--selected)>td {
@@ -27,4 +109,81 @@
 
 .hn-grid .k-table-tbody tr:not(.row--selected):not(.row--positive):not(.row--negative):hover>td {
     background-color: #f3f6fb;
+}
+
+.hn-grid .k-checkbox:checked {
+    background-color: #3a3f45;
+    border-color: #3a3f45;
+}
+
+.hn-box .k-pager,
+.k-grid-pager {
+    justify-content: center;
+    border: 0;
+    border-top: 1px solid #e3e6ec;
+    background: #fff;
+    padding-block: 10px;
+}
+
+.k-grid-pager .k-pager-numbers-wrap {
+    justify-content: center;
+}
+
+.hn-box .k-pager-nav,
+.k-grid-pager .k-pager-nav {
+    border: 1px solid #cfd2d6;
+    border-radius: 4px;
+    background: #fff;
+    color: #222;
+}
+
+.hn-box .k-pager-nav.k-disabled,
+.k-grid-pager .k-pager-nav.k-disabled {
+    color: #c4c7cb;
+    opacity: 1;
+}
+
+.hn-box .k-pager-numbers .k-button,
+.k-grid-pager .k-pager-numbers .k-button {
+    background: transparent;
+    color: #777;
+}
+
+.hn-box .k-pager-numbers .k-button.k-selected,
+.k-grid-pager .k-pager-numbers .k-button.k-selected {
+    background: transparent;
+    color: #222;
+    font-weight: 700;
+}
+
+.hn-box .k-pager-numbers .k-button:hover,
+.k-grid-pager .k-pager-numbers .k-button:hover {
+    background: #f0f1f3;
+}
+
+.k-grid-pager .k-button.k-pager-nav {
+    border: 1px solid #cfd2d6;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #222;
+}
+
+.k-grid-pager .k-button.k-pager-nav.k-disabled {
+    color: #c4c7cb;
+    opacity: 1;
+}
+
+.k-grid-pager .k-pager-numbers .k-button.k-button-flat.k-button-primary {
+    background-color: transparent;
+    color: #777;
+}
+
+.k-grid-pager .k-pager-numbers .k-button.k-button-flat.k-button-primary:hover {
+    background-color: #f0f1f3;
+}
+
+.k-grid-pager .k-pager-numbers .k-button.k-button-flat.k-button-primary.k-selected {
+    background-color: transparent;
+    color: #222;
+    font-weight: 700;
 }
