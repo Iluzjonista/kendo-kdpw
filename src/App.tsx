@@ -11,6 +11,7 @@ import { fetchPosts, type HnPost } from './api/hackerNews';
 import { normalizeFilters, sameFilters, type FilterValues } from './filters';
 import { FilterContext, NumberFilterCell, TextFilterCell, TypeFilterCell } from './filterCells';
 import { SelectedRow } from './SelectedRow';
+import { PostRow } from './PostRow';
 
 const PAGE_SIZE = 20;
 const FILTER_DEBOUNCE_MS = 400;
@@ -162,6 +163,7 @@ export function App(): ReactElement {
             pageable={{ buttonCount: 10, info: true, previousNext: true }}
             onPageChange={handlePageChange}
             // detail={PostDetail}
+            rows={{ data: PostRow }}
             detailExpand={detailExpand}
             onDetailExpandChange={handleDetailExpandChange}
             selectable={{ enabled: true, mode: 'single' }}

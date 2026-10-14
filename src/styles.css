@@ -3,3 +3,28 @@
     visibility: hidden;
     pointer-events: none;
 }
+
+.hn-grid .k-table-tbody tr.row--positive:not(.row--selected)>td {
+    background-color: #e8f5e9;
+}
+
+.hn-grid .k-table-tbody tr.row--positive:not(.row--selected):hover>td {
+    background-color: #d7eedb;
+}
+
+.hn-grid .k-table-tbody tr.row--negative:not(.row--selected)>td {
+    background-color: #fdecea;
+}
+
+.hn-grid .k-table-tbody tr.row--negative:not(.row--selected):hover>td {
+    background-color: #fadbd8;
+}
+
+.hn-grid .k-table-alt-row:not(.row--selected),
+.hn-grid .k-table-alt-row:not(.row--selected)>td {
+    background-color: #fff;
+}
+
+.hn-grid .k-table-tbody tr:not(.row--selected):not(.row--positive):not(.row--negative):hover>td {
+    background-color: #f3f6fb;
+}
