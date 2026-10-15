@@ -10,15 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@progress/kendo-data-query": "^1.7.4",
-    "@progress/kendo-licensing": "^1.11.3",
     "@progress/kendo-react-buttons": "^16.2.0",
-    "@progress/kendo-react-common": "^16.2.0",
+    "@progress/kendo-react-data-tools": "^16.2.0",
     "@progress/kendo-react-dropdowns": "^16.2.0",
     "@progress/kendo-react-grid": "^16.2.0",
     "@progress/kendo-react-inputs": "^16.2.0",
-    "@progress/kendo-react-intl": "^16.2.0",
-    "@progress/kendo-svg-icons": "^5.5.0",
     "@progress/kendo-theme-default": "^14.6.1",
     "react": "^19.2.8",
     "react-dom": "^19.2.8"

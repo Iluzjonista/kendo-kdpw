@@ -1,6 +1,5 @@
-import type { HnPost } from './api/hackerNews';
-
-export type RowTone = 'positive' | 'negative';
+import type { HnPost } from '../api/hackerNews';
+import type { RowTone } from '../components/GridWrapper';
 
 const HOT_COMMENTS = 2000;
 const QUIET_COMMENTS = 500;

@@ -1,7 +1,7 @@
 import type { ReactElement } from 'react';
 import { fetchPosts, type HnPost } from './api/hackerNews';
 import { GridWrapper, type FilterOption, type GridColumnConfig } from './components/GridWrapper';
-import { getRowTone } from './rowTone';
+import { getRowTone } from './utils/rowTone';
 
 const TYPE_OPTIONS: readonly FilterOption[] = [
   { text: 'Show HN', value: 'show_hn' },
