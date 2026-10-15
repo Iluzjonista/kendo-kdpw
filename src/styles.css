@@ -213,8 +213,6 @@ body {
     color: #222;
 }
 
-
-
 .gw-grid.has-detail colgroup>col:first-child {
     width: 0 !important;
 }
