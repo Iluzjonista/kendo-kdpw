@@ -1,11 +1,11 @@
 import type { ReactElement } from 'react';
-import type { GridCustomRowProps } from '@progress/kendo-react-grid';
-import type { HnPost } from './api/hackerNews';
-import { getRowTone } from './rowTone';
+import type { GridCustomRowProps, GridDetailRowProps } from '@progress/kendo-react-grid';
+import { useGridContext } from './GridContext';
 
-export function PostRow(props: GridCustomRowProps): ReactElement {
+export function GridRow(props: GridCustomRowProps): ReactElement {
+    const { rowToneOf } = useGridContext();
     const { trProps, children, dataItem, isSelected } = props;
-    const tone = getRowTone(dataItem as HnPost);
+    const tone = rowToneOf(dataItem);
 
     const className = [
         props.className,
@@ -26,4 +26,9 @@ export function PostRow(props: GridCustomRowProps): ReactElement {
             {children}
         </tr>
     );
+}
+
+export function GridDetail(props: GridDetailRowProps): ReactElement {
+    const { renderDetail } = useGridContext();
+    return <div className="gw-detail">{renderDetail(props.dataItem)}</div>;
 }

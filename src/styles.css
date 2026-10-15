@@ -187,3 +187,51 @@ body {
     color: #222;
     font-weight: 700;
 }
+
+.gw-selected {
+    margin-bottom: 16px;
+    padding: 12px 18px 14px;
+    border: 1px solid #e3e6ec;
+    border-radius: 6px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+    background: #fff;
+}
+
+.gw-selected__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gw-selected__header h3 {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.gw-selected__list {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 4px 18px;
+    margin: 12px 0 0;
+}
+
+.gw-selected__list dd {
+    margin: 0;
+    overflow-wrap: anywhere;
+}
+
+.gw-toolbar {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.gw-error {
+    margin-bottom: 12px;
+    padding: 10px 14px;
+    border: 1px solid #f5c2c0;
+    border-radius: 6px;
+    background: #fdecea;
+    color: #b42318;
+}
