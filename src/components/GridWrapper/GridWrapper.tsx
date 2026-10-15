@@ -2,13 +2,15 @@ import { useCallback, useEffect, useMemo, useState, type ReactElement } from 're
 import {
     Grid,
     GridColumn,
+    type GridCustomCellProps,
     type GridDetailExpandChangeEvent,
     type GridPageChangeEvent,
     type GridSelectionChangeEvent,
 } from '@progress/kendo-react-grid';
+import { detailExpandReducer, DETAIL_EXPAND_ACTION } from '@progress/kendo-react-data-tools';
 import { Button } from '@progress/kendo-react-buttons';
 import { getDataCell, getFilterCell } from './cells/cellFactories';
-import { GridContext, type GridContextValue } from './context/GridContext';
+import { GridContext, useGridContext, type GridContextValue } from './context/GridContext';
 import { GridDetail, GridRow } from './parts/GridParts';
 import { SelectedRow } from './parts/SelectedRow';
 import { normalizeFilters, sameFilters, type FilterValues } from './filters';
@@ -16,6 +18,24 @@ import type { GridWrapperProps } from './types';
 
 const DEFAULT_PAGE_SIZE = 10;
 const TEXT_DEBOUNCE_MS = 400;
+
+function DetailToggleCell(props: GridCustomCellProps): ReactElement {
+    const { toggleDetail, isDetailExpanded } = useGridContext();
+    const expanded = isDetailExpanded(props.dataItem);
+    return (
+        <td {...props.tdProps}>
+            <button
+                type="button"
+                className="gw-detail-toggle"
+                aria-label="Details"
+                aria-expanded={expanded}
+                onClick={() => toggleDetail(props.dataItem)}
+            >
+                …
+            </button>
+        </td>
+    );
+}
 
 interface Request {
     readonly skip: number;
@@ -107,14 +127,26 @@ export function GridWrapper<T extends object>({
         [draft, applyFilters],
     );
 
+    const toggleDetail = useCallback((item: unknown): void => {
+        const id = String((item as Record<string, unknown>)[idField]);
+        setDetailExpand((current) => detailExpandReducer(current ?? {}, { type: DETAIL_EXPAND_ACTION.TOGGLE, id }));
+    }, [idField]);
+
+    const isDetailExpanded = useCallback((item: unknown): boolean => {
+        const id = String((item as Record<string, unknown>)[idField]);
+        return Boolean(detailExpand?.[id]);
+    }, [detailExpand, idField]);
+
     const contextValue = useMemo<GridContextValue>(
         () => ({
             filterValues: draft,
             onFilterChange: handleFilterChange,
             rowToneOf: (item) => getRowTone?.(item as T),
             renderDetail: (item) => renderDetail?.(item as T) ?? null,
+            toggleDetail,
+            isDetailExpanded,
         }),
-        [draft, handleFilterChange, getRowTone, renderDetail],
+        [draft, handleFilterChange, getRowTone, renderDetail, toggleDetail, isDetailExpanded],
     );
 
     const handleRefresh = (): void => {
@@ -134,6 +166,11 @@ export function GridWrapper<T extends object>({
     };
 
     const handleSelectionChange = (event: GridSelectionChangeEvent): void => {
+        const target = (event.syntheticEvent?.target ?? event.nativeEvent?.target) as EventTarget | null;
+        if (target instanceof Element && target.closest('.gw-detail-toggle')) {
+            return;
+        }
+
         const nowIds = Object.entries(event.select)
             .filter(([, on]) => Boolean(on))
             .map(([id]) => id);
@@ -174,9 +211,9 @@ export function GridWrapper<T extends object>({
             ) : null}
 
             <GridContext.Provider value={contextValue}>
-                <div className="hn-box" aria-busy={loading}>
+                <div className="gw-box" aria-busy={loading}>
                     <Grid
-                        className="hn-grid"
+                        className={renderDetail ? 'gw-grid has-detail' : 'gw-grid'}
                         data={items}
                         dataItemKey={idField}
                         scrollable="none"
@@ -208,6 +245,9 @@ export function GridWrapper<T extends object>({
                                 }}
                             />
                         ))}
+                        {renderDetail ? (
+                            <GridColumn key="__detail_toggle" title="" width={40} sortable={false} filterable={false} cells={{ data: DetailToggleCell }} />
+                        ) : null}
                     </Grid>
 
                     {loading ? (

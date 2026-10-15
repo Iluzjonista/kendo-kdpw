@@ -7,6 +7,8 @@ export interface GridContextValue {
     readonly onFilterChange: (key: string, value: string, immediate: boolean) => void;
     readonly rowToneOf: (item: unknown) => RowTone | undefined;
     readonly renderDetail: (item: unknown) => ReactNode;
+    readonly toggleDetail: (item: unknown) => void;
+    readonly isDetailExpanded: (item: unknown) => boolean;
 }
 
 export const GridContext = createContext<GridContextValue | null>(null);

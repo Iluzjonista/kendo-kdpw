@@ -2,6 +2,7 @@ import type { ReactElement } from 'react';
 import { fetchPosts, type HnPost } from './api/hackerNews';
 import { GridWrapper, type FilterOption, type GridColumnConfig } from './components/GridWrapper';
 import { getRowTone } from './utils/rowTone';
+import { PostDetail } from './components/PostDetail';
 
 const TYPE_OPTIONS: readonly FilterOption[] = [
   { text: 'Show HN', value: 'show_hn' },
@@ -27,6 +28,7 @@ function App(): ReactElement {
         fetchData={fetchPosts}
         pageSize={10}
         getRowTone={getRowTone}
+        renderDetail={(post) => <PostDetail post={post} />}
       />
     </main>
   );

@@ -17,7 +17,7 @@ body {
     background: #fff;
 }
 
-.hn-box {
+.gw-box {
     position: relative;
     margin-top: 12px;
     border: 1px solid #e3e6ec;
@@ -27,17 +27,17 @@ body {
     background: #fff;
 }
 
-.hn-box .hn-grid.k-grid {
+.gw-box .gw-grid.k-grid {
     border: 0;
     border-radius: 0;
     font-family: inherit;
     font-size: 13px;
 }
 
-.hn-grid th,
-.hn-grid td,
-.hn-grid .k-table-th,
-.hn-grid .k-table-td {
+.gw-grid th,
+.gw-grid td,
+.gw-grid .k-table-th,
+.gw-grid .k-table-td {
     border-left-width: 0;
     border-right-width: 0;
     border-inline-width: 0;
@@ -45,78 +45,74 @@ body {
     border-inline-end: 0;
 }
 
-.hn-grid .k-grid-header,
-.hn-grid .k-grid-header th,
-.hn-grid .k-table-thead .k-table-th {
+.gw-grid .k-table-thead .k-table-th {
     background: #fff;
     font-weight: 700;
     color: #222;
 }
 
-.hn-grid .k-grid-header thead>tr:not(.k-filter-row)>th,
-.hn-grid .k-table-thead tr:not(.k-filter-row)>.k-table-th {
+.gw-grid .k-table-thead tr:not(.k-filter-row)>.k-table-th {
     border-bottom: 3px solid #a7c600;
     padding-block: 12px;
 }
 
-.hn-grid .k-grid-header th .k-checkbox,
-.hn-grid th input[type='checkbox'],
-.hn-grid .k-table-thead .k-checkbox {
+.gw-grid th input[type='checkbox'],
+.gw-grid .k-table-thead .k-checkbox {
     visibility: hidden;
     pointer-events: none;
 }
 
-.hn-grid .k-filter-row,
-.hn-grid .k-filter-row th,
-.hn-grid .k-filter-row td,
-.hn-grid .k-filter-row>.k-table-td {
+.gw-grid .k-filter-row,
+.gw-grid .k-filter-row th,
+.gw-grid .k-filter-row td,
+.gw-grid .k-filter-row>.k-table-td {
     background: #f5f5f5;
     border-bottom: 1px solid #e3e6ec;
 }
 
-.hn-grid .k-filter-row .k-input,
-.hn-grid .k-filter-row .k-picker,
-.hn-grid .k-filter-row .k-input-inner {
+.gw-grid .k-filter-row .k-input,
+.gw-grid .k-filter-row .k-picker,
+.gw-grid .k-filter-row .k-input-inner {
     background: #fff;
 }
 
-.hn-grid .k-table-tbody td,
-.hn-grid .k-table-tbody>tr>.k-table-td {
+.gw-grid .k-table-tbody td,
+.gw-grid .k-table-tbody>tr>.k-table-td {
     padding-block: 10px;
     border-bottom: 1px solid #eceef1;
 }
 
-.hn-grid .k-table-tbody tr.row--positive:not(.row--selected)>td {
+.gw-grid .k-table-tbody tr.row--positive:not(.row--selected)>td {
     background-color: #e8f5e9;
 }
 
-.hn-grid .k-table-tbody tr.row--positive:not(.row--selected):hover>td {
+.gw-grid .k-table-tbody tr.row--positive:not(.row--selected):hover>td {
     background-color: #d7eedb;
 }
 
-.hn-grid .k-table-tbody tr.row--negative:not(.row--selected)>td {
+.gw-grid .k-table-tbody tr.row--negative:not(.row--selected)>td {
     background-color: #fdecea;
 }
 
-.hn-grid .k-table-tbody tr.row--negative:not(.row--selected):hover>td {
+.gw-grid .k-table-tbody tr.row--negative:not(.row--selected):hover>td {
     background-color: #fadbd8;
 }
 
-.hn-grid .k-table-alt-row:not(.row--selected),
-.hn-grid .k-table-alt-row:not(.row--selected)>td {
+.gw-grid .k-table-alt-row:not(.row--selected),
+.gw-grid .k-table-alt-row:not(.row--selected)>td {
     background-color: #fff;
 }
 
-.hn-grid .k-table-tbody tr:not(.row--selected):not(.row--positive):not(.row--negative):hover>td {
+.gw-grid .k-table-tbody tr:not(.row--selected):not(.row--positive):not(.row--negative):hover>td {
     background-color: #f3f6fb;
 }
 
-.hn-grid .k-checkbox:checked {
+.gw-grid .k-checkbox:checked {
     background-color: #3a3f45;
     border-color: #3a3f45;
 }
 
-.hn-box .k-pager {
+.gw-box .k-pager {
     justify-content: center;
     border: 0;
     border-top: 1px solid #e3e6ec;
@@ -124,30 +120,30 @@ body {
     padding-block: 10px;
 }
 
-.hn-box .k-pager-nav {
+.gw-box .k-pager-nav {
     border: 1px solid #cfd2d6;
     border-radius: 4px;
     background: #fff;
     color: #222;
 }
 
-.hn-box .k-pager-nav.k-disabled {
+.gw-box .k-pager-nav.k-disabled {
     color: #c4c7cb;
     opacity: 1;
 }
 
-.hn-box .k-pager-numbers .k-button {
+.gw-box .k-pager-numbers .k-button {
     background: transparent;
     color: #777;
 }
 
-.hn-box .k-pager-numbers .k-button.k-selected {
+.gw-box .k-pager-numbers .k-button.k-selected {
     background: transparent;
     color: #222;
     font-weight: 700;
 }
 
-.hn-box .k-pager-numbers .k-button:hover {
+.gw-box .k-pager-numbers .k-button:hover {
     background: #f0f1f3;
 }
 
@@ -197,4 +193,22 @@ body {
     border-radius: 6px;
     background: #fdecea;
     color: #b42318;
+}
+
+.gw-grid.has-detail th:first-child,
+.gw-grid.has-detail td:first-child {
+    display: none;
+}
+
+.gw-detail-toggle {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 1;
+    color: #555;
+}
+
+.gw-detail-toggle:hover {
+    color: #222;
 }
