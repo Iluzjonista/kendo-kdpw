@@ -116,8 +116,7 @@ body {
     border-color: #3a3f45;
 }
 
-.hn-box .k-pager,
-.k-grid-pager {
+.hn-box .k-pager {
     justify-content: center;
     border: 0;
     border-top: 1px solid #e3e6ec;
@@ -125,67 +124,31 @@ body {
     padding-block: 10px;
 }
 
-.k-grid-pager .k-pager-numbers-wrap {
-    justify-content: center;
-}
-
-.hn-box .k-pager-nav,
-.k-grid-pager .k-pager-nav {
+.hn-box .k-pager-nav {
     border: 1px solid #cfd2d6;
     border-radius: 4px;
     background: #fff;
     color: #222;
 }
 
-.hn-box .k-pager-nav.k-disabled,
-.k-grid-pager .k-pager-nav.k-disabled {
+.hn-box .k-pager-nav.k-disabled {
     color: #c4c7cb;
     opacity: 1;
 }
 
-.hn-box .k-pager-numbers .k-button,
-.k-grid-pager .k-pager-numbers .k-button {
+.hn-box .k-pager-numbers .k-button {
     background: transparent;
     color: #777;
 }
 
-.hn-box .k-pager-numbers .k-button.k-selected,
-.k-grid-pager .k-pager-numbers .k-button.k-selected {
+.hn-box .k-pager-numbers .k-button.k-selected {
     background: transparent;
     color: #222;
     font-weight: 700;
 }
 
-.hn-box .k-pager-numbers .k-button:hover,
-.k-grid-pager .k-pager-numbers .k-button:hover {
+.hn-box .k-pager-numbers .k-button:hover {
     background: #f0f1f3;
-}
-
-.k-grid-pager .k-button.k-pager-nav {
-    border: 1px solid #cfd2d6;
-    border-radius: 4px;
-    background-color: #fff;
-    color: #222;
-}
-
-.k-grid-pager .k-button.k-pager-nav.k-disabled {
-    color: #c4c7cb;
-    opacity: 1;
-}
-
-.k-grid-pager .k-pager-numbers .k-button.k-button-flat.k-button-primary {
-    background-color: transparent;
-    color: #777;
-}
-
-.k-grid-pager .k-pager-numbers .k-button.k-button-flat.k-button-primary:hover {
-    background-color: #f0f1f3;
-}
-
-.k-grid-pager .k-pager-numbers .k-button.k-button-flat.k-button-primary.k-selected {
-    background-color: transparent;
-    color: #222;
-    font-weight: 700;
 }
 
 .gw-selected {

@@ -27,7 +27,7 @@ export function SelectedRow({ item, onHide }: SelectedRowProps): ReactElement {
             </header>
             <dl className="gw-selected__list">
                 {Object.entries(item).map(([key, value]) => (
-                    <div className="gw-selected__item" key={key} style={{ display: 'contents' }}>
+                    <div key={key} style={{ display: 'contents' }}>
                         <dt>{key}</dt>
                         <dd>{formatValue(value)}</dd>
                     </div>

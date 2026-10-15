@@ -30,5 +30,5 @@ export function GridRow(props: GridCustomRowProps): ReactElement {
 
 export function GridDetail(props: GridDetailRowProps): ReactElement {
     const { renderDetail } = useGridContext();
-    return <div className="gw-detail">{renderDetail(props.dataItem)}</div>;
+    return <div>{renderDetail(props.dataItem)}</div>;
 }
