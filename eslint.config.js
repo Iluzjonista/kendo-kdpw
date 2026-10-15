@@ -20,7 +20,7 @@ export default defineConfig([
     },
   },
   {
-    files: ['src/components/GridWrapper/cellFactories.tsx'],
+    files: ['src/components/GridWrapper/cells/cellFactories.tsx'],
     rules: {
       'react-refresh/only-export-components': 'off',
     },

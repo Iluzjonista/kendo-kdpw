@@ -1,6 +1,6 @@
 import type { ReactElement } from 'react';
 import type { GridCustomRowProps, GridDetailRowProps } from '@progress/kendo-react-grid';
-import { useGridContext } from './GridContext';
+import { useGridContext } from '../context/GridContext';
 
 export function GridRow(props: GridCustomRowProps): ReactElement {
     const { rowToneOf } = useGridContext();

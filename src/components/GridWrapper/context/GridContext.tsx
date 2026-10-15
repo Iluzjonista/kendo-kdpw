@@ -1,6 +1,6 @@
 import { createContext, useContext, type ReactNode } from 'react';
-import type { FilterValues } from './filters';
-import type { RowTone } from './types';
+import type { FilterValues } from '../filters';
+import type { RowTone } from '../types';
 
 export interface GridContextValue {
     readonly filterValues: FilterValues;

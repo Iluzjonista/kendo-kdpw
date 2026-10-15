@@ -7,10 +7,10 @@ import {
     type GridSelectionChangeEvent,
 } from '@progress/kendo-react-grid';
 import { Button } from '@progress/kendo-react-buttons';
-import { getDataCell, getFilterCell } from './cellFactories';
-import { GridContext, type GridContextValue } from './GridContext';
-import { GridDetail, GridRow } from './GridParts';
-import { SelectedRow } from './SelectedRow';
+import { getDataCell, getFilterCell } from './cells/cellFactories';
+import { GridContext, type GridContextValue } from './context/GridContext';
+import { GridDetail, GridRow } from './parts/GridParts';
+import { SelectedRow } from './parts/SelectedRow';
 import { normalizeFilters, sameFilters, type FilterValues } from './filters';
 import type { GridWrapperProps } from './types';
 

@@ -2,8 +2,8 @@ import type { ReactElement, ReactNode } from 'react';
 import type { GridCustomCellProps, GridCustomFilterCellProps } from '@progress/kendo-react-grid';
 import { Input, NumericTextBox } from '@progress/kendo-react-inputs';
 import { DropDownList } from '@progress/kendo-react-dropdowns';
-import { useGridContext } from './GridContext';
-import type { ColumnFilter, FilterOption, GridColumnConfig } from './types';
+import { useGridContext } from '../context/GridContext';
+import type { ColumnFilter, FilterOption, GridColumnConfig } from '../types';
 import { HeaderThElement } from '@progress/kendo-react-data-tools';
 
 type FilterCellComponent = (props: GridCustomFilterCellProps) => ReactElement;
