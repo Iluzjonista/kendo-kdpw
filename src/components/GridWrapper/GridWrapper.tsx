@@ -31,7 +31,7 @@ function DetailToggleCell(props: GridCustomCellProps): ReactElement {
                 aria-expanded={expanded}
                 onClick={() => toggleDetail(props.dataItem)}
             >
-                …
+                {expanded ? 'x' : '…'}
             </button>
         </td>
     );

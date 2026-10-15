@@ -212,3 +212,18 @@ body {
 .gw-detail-toggle:hover {
     color: #222;
 }
+
+
+
+.gw-grid.has-detail colgroup>col:first-child {
+    width: 0 !important;
+}
+
+.gw-grid.has-detail .k-table-th:first-child,
+.gw-grid.has-detail .k-table-td:first-child {
+    width: 0;
+    padding: 0;
+    border: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
